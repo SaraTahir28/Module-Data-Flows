@@ -1,19 +1,33 @@
 
-console.log("hello world")
-const film = {
+const film1 = {
   title: "Killing of Flower Moon",
   director: "Martin Scorsese",
   times: ["15:35"],
   certificate: "15",
   duration: 112,
 };
-console.log(film, "......<---film")
+const film2 = {
+    title: "Typist Artist Pirate King",
+    director: "Carol Morley",
+    times: ["15:00", "20:00"],
+    certificate: "12A",
+    duration: 108,
+  };
 
 
-//Refactor the current logic to create a template for film card.
-const filmCard = document.getElementById("film-card-template")
-.content.cloneNode(true);
+
+//How can we resuse functionality in javascript
+
+function createFilmCard(film){
+    const filmCard = document
+    .getElementById("film-card-template")
+    .content.cloneNode(true);
 filmCard.querySelector("h3").textContent = film.title;
 filmCard.querySelector("p").textContent = film.director;
-document.body.appendChild(filmCard)
-console.log(filmCard)
+//not interested in appending the filmCard to DOM here
+return filmCard
+}
+//document.body.append(createFilmCard(),createFilmCard())
+
+document.body.append(createFilmCard(film1),createFilmCard(film2))
+ 
