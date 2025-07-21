@@ -10,20 +10,10 @@ const film = {
 console.log(film, "......<---film")
 
 
-//Render a film card in userinterface.
-//create a film card = section
-//create a title element.
-//append title to the filmcard
-//append filmcard to the DOM.
-const filmCard = document.createElement('section');
-const title = document.createElement("h1");
-const director = document.createElement("p");
-title.textContent = film.title;
-director.textContent = film.director;
-filmCard.appendChild(title)
-filmCard.appendChild(director)
-
-
+//Refactor the current logic to create a template for film card.
+const filmCard = document.getElementById("film-card-template")
+.content.cloneNode(true);
+filmCard.querySelector("h3").textContent = film.title;
+filmCard.querySelector("p").textContent = film.director;
+document.body.appendChild(filmCard)
 console.log(filmCard)
-console.log(document.body)
-document.body.appendChild(filmCard);
