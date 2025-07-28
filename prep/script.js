@@ -78,5 +78,10 @@ render();
 
 const input = document.querySelector("input")
 input.addEventListener('keyup',function(){
-  console.log(input.value)
+  //update the search term
+  state.searchTerm = input.value
+  console.log(state,"<----State>")
 })
+
+
+//The .filter() method creates a new array by keeping only the items for which the callback returns true.
