@@ -48,10 +48,11 @@ const state = {
   searchTerm:"",
 };
 
+//Connecting our search term to film title
+//-- query Selector for input element
+//link the input in the box and update search term state.
+//--relate userinput value to film title.== filter results based on userinput ? :O
 
-//State- Data that can change over time. 
-//---Our Films Array---
-//__ Our Search term/bar---
 
 
 
@@ -75,3 +76,7 @@ document.body.append(...filmCards);
 }
 render();
 
+const input = document.querySelector("input")
+input.addEventListener('keyup',function(){
+  console.log(input.value)
+})
