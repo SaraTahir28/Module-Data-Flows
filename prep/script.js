@@ -80,7 +80,12 @@ const input = document.querySelector("input")
 input.addEventListener('keyup',function(){
   //update the search term
   state.searchTerm = input.value
-  console.log(state,"<----State>")
+  //filtering the films
+  const filteredFilms = state.films.filter((function(film){
+    //compare searchterm to filmtitle.
+    return state.searchTerm === film.title //condition to strict- only filtering if the whole title is written.
+  }))
+  console.log(filteredFilms)
 })
 
 
