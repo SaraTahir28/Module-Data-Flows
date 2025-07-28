@@ -67,7 +67,11 @@ filmCard.querySelector("p").textContent = film.director;
 
 return filmCard
 }
-
-const filmCards = films.map(createFilmCard);
+//render function 
+function render(){
+const filmCards = state.films.map(createFilmCard);
 document.body.append(...filmCards);
+
+}
+render();
 
