@@ -31,13 +31,8 @@ filmCard.querySelector("p").textContent = film.director;
 return filmCard
 }
 
-
-for(const film of films){
-    const card = createFilmCard(film);
-    console.log(card)
-    document.body.appendChild(card)
-
-}
+const filmCards = films.map(createFilmCard);
+document.body.append(...filmCards);
 
 //document.body.append(createFilmCard(),createFilmCard())
 
