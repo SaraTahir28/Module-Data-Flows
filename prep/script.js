@@ -83,10 +83,10 @@ input.addEventListener('keyup',function(){
   //filtering the films
   const filteredFilms = state.films.filter((function(film){
     //compare searchterm to filmtitle.
-    return state.searchTerm === film.title //condition to strict- only filtering if the whole title is written.
+    return film.title.includes(state.searchTerm) //flexible approach to filtering so that even if userinputs part of the title we get results.
   }))
   console.log(filteredFilms)
 })
-
+//We can see the films are getting filtered now on our console but our UserIterface is not getting updated.
 
 //The .filter() method creates a new array by keeping only the items for which the callback returns true.
